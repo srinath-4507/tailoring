@@ -1,4 +1,6 @@
-const API_BASE = "http://localhost:5000";
+const API_BASE = import.meta.env.PROD 
+  ? "https://your-backend-url.onrender.com" 
+  : "http://localhost:5000";
 
 export async function createOrder(orderData) {
   const res = await fetch(`${API_BASE}/api/orders`, {
